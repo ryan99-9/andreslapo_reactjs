@@ -9,6 +9,8 @@ import {
     Image
 } from 'react-bootstrap'
 
+const url = 'https://jajan-database.herokuapp.com'
+
 class HistoryAdminPage extends React.Component {
     constructor(props) {
         super(props)
@@ -18,7 +20,7 @@ class HistoryAdminPage extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(`http://localhost:2000/history`)
+        Axios.get(`${url}/history`)
             .then(res => {
                 this.setState({ history: res.data })
             })

@@ -8,7 +8,8 @@ import {
     Table,
     Image
 } from 'react-bootstrap'
-// import { connect } from 'react-redux'
+
+const url = 'https://jajan-database.herokuapp.com'
 
 class HistoryPage extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class HistoryPage extends React.Component {
 
     componentDidMount() {
         let idUser = localStorage.getItem('idUser')
-        Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
+        Axios.get(`${url}/history?idUser=${idUser}`)
             .then(res => {
                 this.setState({ history: res.data })
             })

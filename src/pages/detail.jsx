@@ -9,6 +9,8 @@ import { connect } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { addCart } from '../redux/actions'
 
+const url = 'https://jajan-database.herokuapp.com'
+
 class DetailPage extends React.Component {
     constructor(props) {
         super(props)
@@ -20,7 +22,7 @@ class DetailPage extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(`http://localhost:2000/products/${document.location.search.substring(1)}`)
+        Axios.get(`${url}/products/${document.location.search.substring(1)}`)
             .then(res => {
                 this.setState({ product: res.data })
             })

@@ -1,8 +1,10 @@
 import Axios from 'axios'
 
+const url = 'https://jajan-database.herokuapp.com'
+
 export const login = (username, password) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
+        Axios.get(`${url}/users?username=${username}&password=${password}`)
             .then(res => {
                 if (res.data.length === 0) {
                     // jika tidak ada muncul error
@@ -43,7 +45,7 @@ export const logout = () => {
 
 export const keepLogin = (id) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users/${id}`)
+        Axios.get(`${url}/users/${id}`)
             .then(res => {
                 return dispatch({
                     type: 'LOGIN',
@@ -56,7 +58,7 @@ export const keepLogin = (id) => {
 export const register = (username, email, data) => {
     return (dispatch) => {
         // cek kesamaan username di database
-        Axios.get(`http://localhost:2000/users?username=${username}`)
+        Axios.get(`${url}/users?username=${username}`)
             .then(res => {
                 if (res.data.length !== 0) {
                     return dispatch({
@@ -64,7 +66,7 @@ export const register = (username, email, data) => {
                     })
                 }
                 //cek kesamaan email di database
-                Axios.get(`http://localhost:2000/users?email=${email}`)
+                Axios.get(`${url}/users?email=${email}`)
                     .then(res => {
                         if (res.data.length !== 0) {
                             return dispatch({
@@ -72,7 +74,7 @@ export const register = (username, email, data) => {
                             })
                         }
                         //post data user baru
-                        Axios.post('http://localhost:2000/users', data)
+                        Axios.post(`${url}/users`, data)
                             .then(res => {
                                 return dispatch({
                                     type: 'SUCCESS_REGISTER'

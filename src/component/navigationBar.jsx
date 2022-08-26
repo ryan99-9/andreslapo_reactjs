@@ -11,32 +11,9 @@ import { LOGO } from '../assets'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../redux/actions'
-// import { Navigate } from 'react-router-dom'
 
 class NavigationBar extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         toLogin: false,
-    //         toCart: false
-    //     }
-    // }
-
-    // onCart = () => {
-    //     if (this.props.username) {
-    //         this.setState({ toCart: true })
-    //     } else {
-    //         this.setState({ toLogin: true })
-    //     }
-    // }
-
     render() {
-        // if (this.state.toCart) {
-        //     return <Navigate to='/cart' />
-        // } else if (this.state.toLogin) {
-        //     return <Navigate to='/login' />
-        // }
-
         return (
             <Navbar fixed='top' className='px-5' style={styles.navbar} expand="lg">
                 <Navbar.Brand href="#home">

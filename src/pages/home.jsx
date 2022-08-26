@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+const url = 'https://jajan-database.herokuapp.com'
 class HomePage extends React.Component {
     constructor(props) {
         super(props)
@@ -21,10 +22,10 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:2000/slider')
+        Axios.get(`${url}/slider`)
             .then(res => {
                 this.setState({ carousel: res.data })
-                Axios.get(' http://localhost:2000/products')
+                Axios.get(`${url}/products`)
                     .then(res => {
                         this.setState({ products: res.data, maxPage: Math.ceil(res.data.length / this.state.prodPerPage) })
                     })
