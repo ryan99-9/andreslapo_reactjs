@@ -1,0 +1,20 @@
+.pageCont {
+    background: url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+    padding: 12vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    color:orange;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 1%;
+}
+.image {
+    height: 10vh;
+    width: 10vh;
+    object-fit: cover;
+    object-position: center;
+}

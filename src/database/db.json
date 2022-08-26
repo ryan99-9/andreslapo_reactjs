@@ -1,0 +1,330 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Lemper",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 4000,
+      "stock": 10,
+      "images": [
+        "https://asset.kompas.com/crops/lcF8iyNIubGqRCIYglpI-G1Qzmg=/0x292:1000x959/780x390/data/photo/2021/08/02/61081f8d3a20b.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ote-Ote",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 2000,
+      "stock": 10,
+      "images": [
+        "https://img.kurio.network/gFqGjoDNJ6h1YQ1M5Gwhd193y4I=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/21/04/20/9a956e50-023f-4cb2-89c9-bedd4333e3fa.jpe"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pastel",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 4000,
+      "stock": 10,
+      "images": [
+        "https://cdn-2.tstatic.net/kaltim/foto/bank/images/resep-pastel-ayam.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Gedang Goreng",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 3000,
+      "stock": 10,
+      "images": [
+        "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:good,w_640,ar_16:9/v1533904208/wrwldvy8uwck1ssielid.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lumpia",
+      "category": "",
+      "brand": "FOSSIL",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 4000,
+      "stock": 12,
+      "images": [
+        "https://sweetrip.id/wp-content/uploads/2021/03/lumpia-semarang.png"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Risoles",
+      "category": "",
+      "brand": "Audemars",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 4000,
+      "stock": 10,
+      "images": [
+        "https://asset.kompas.com/crops/_B42nVw4QW_8mK2CIIfOrdUjA8I=/205x17:858x453/780x390/data/photo/2021/07/13/60ed5b53cf277.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Nogosari",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 3000,
+      "stock": 8,
+      "images": [
+        "https://s4.bukalapak.com/img/9790742049/large/Kue_Basah_Nogosari___Snack_Sehat___Cocok_untuk_berbagai_Acar.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Roti Goreng",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 4000,
+      "stock": 12,
+      "images": [
+        "https://cdn1-production-images-kly.akamaized.net/Pvw-5vVVu_cH0cBU5yFJrVtTQvA=/469x625/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3335577/original/048734500_1609213988-gabin_goreng.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Tahu isi",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 3000,
+      "stock": 12,
+      "images": [
+        "https://img.okezone.com/content/2020/03/04/298/2178157/camilan-malam-resep-tahu-isi-kriuknya-nagih-GL1B2BcyiK.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Roti Zebra",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 3000,
+      "stock": 12,
+      "images": [
+        "https://i0.wp.com/img-global.cpcdn.com/recipes/c39b60ebf53a90c8/1360x964cq70/bolu-zebra-tanpa-oven.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Bolu Gulung",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 4000,
+      "stock": 12,
+      "images": [
+        "https://img-global.cpcdn.com/recipes/a827065eb7df4865/1200x630cq70/photo.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Iwel-Iwel",
+      "category": "",
+      "brand": "Rolex",
+      "rating": [],
+      "colour": "",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
+      "price": 3000,
+      "stock": 12,
+      "images": [
+        "https://cdn0-production-images-kly.akamaized.net/QFOvoIQ0STyJVAicuvDUCi8cPGk=/0x499:4592x3087/469x260/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3567191/original/042122400_1631244932-shutterstock_2029190708.jpg"
+      ]
+    }
+  ],
+  "slider": [
+    {
+      "image": "https://s3.theasianparent.com/cdn-cgi/image/width=1200,fit=crop/tap-assets-prod/wp-content/uploads/sites/24/2021/05/feate-jajanan-tradisional-650x339.jpg",
+      "title": "Cari Jajanan Tradisional ?"
+    },
+    {
+      "image": "https://selerasa.com/wp-content/uploads/2018/12/roti-manis-1200x1141.jpeg",
+      "title": "Cari Aneka Kue ?"
+    },
+    {
+      "image": "https://cdn-image.hipwee.com/wp-content/uploads/2018/05/hipwee-8301162_20170531121322.png",
+      "title": "Cari Aneka Goreng-Gorengan ?"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQsYNUr9dbnf20wVsSajuw1vVE2QEEAJYxA&usqp=CAU",
+      "title": "Cari yang NDANG SAT - SET - WAT - WET"
+    },
+    {
+      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/money-saving-tips-1622109964.jpg?crop=1.00xw:0.750xh;0,0.250xh&resize=1200:*",
+      "title": "Cari yang HARGA TEMAN"
+    },
+    {
+      "image": "https://www.odtap.com/wp-content/uploads/2018/10/food-delivery.jpg",
+      "title": "Cari yang SIAP ANTAR"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin1",
+      "password": "admin11!",
+      "email": "admin@gmail.com",
+      "role": "admin",
+      "cart": []
+    },
+    {
+      "id": 2,
+      "username": "penyok",
+      "password": "penyok1!",
+      "email": "penyok@gmail.com",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "username": "mukidi",
+      "email": "mukidi@gmail.com",
+      "password": "mukidi1!",
+      "role": "user",
+      "id": 3,
+      "cart": []
+    }
+  ],
+  "history": [
+    {
+      "idUser": 2,
+      "username": "penyok",
+      "time": "8/24/2022, 4:05:48 PM",
+      "products": [
+        {
+          "id": 2,
+          "name": "Ote-Ote",
+          "image": "https://img.kurio.network/gFqGjoDNJ6h1YQ1M5Gwhd193y4I=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/21/04/20/9a956e50-023f-4cb2-89c9-bedd4333e3fa.jpe",
+          "price": 2000,
+          "stock": 10,
+          "qty": 4
+        }
+      ],
+      "id": 1
+    },
+    {
+      "idUser": 2,
+      "username": "penyok",
+      "time": "8/24/2022, 4:09:11 PM",
+      "products": [
+        {
+          "id": 2,
+          "name": "Ote-Ote",
+          "image": "https://img.kurio.network/gFqGjoDNJ6h1YQ1M5Gwhd193y4I=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/21/04/20/9a956e50-023f-4cb2-89c9-bedd4333e3fa.jpe",
+          "price": 2000,
+          "stock": 10,
+          "qty": 3
+        }
+      ],
+      "id": 2
+    },
+    {
+      "idUser": 3,
+      "username": "mukidi",
+      "time": "8/24/2022, 5:03:09 PM",
+      "products": [
+        {
+          "id": 6,
+          "name": "Risoles",
+          "image": "https://asset.kompas.com/crops/_B42nVw4QW_8mK2CIIfOrdUjA8I=/205x17:858x453/780x390/data/photo/2021/07/13/60ed5b53cf277.jpg",
+          "price": 4000,
+          "stock": 10,
+          "qty": 1
+        }
+      ],
+      "id": 5
+    },
+    {
+      "idUser": 3,
+      "username": "mukidi",
+      "time": "8/24/2022, 5:07:15 PM",
+      "products": [
+        {
+          "id": 2,
+          "name": "Ote-Ote",
+          "image": "https://img.kurio.network/gFqGjoDNJ6h1YQ1M5Gwhd193y4I=/1200x900/filters:quality(80)/https://kurio-img.kurioapps.com/21/04/20/9a956e50-023f-4cb2-89c9-bedd4333e3fa.jpe",
+          "price": 2000,
+          "stock": 10,
+          "qty": 1
+        },
+        {
+          "id": 11,
+          "name": "Bolu Gulung",
+          "image": "https://img-global.cpcdn.com/recipes/a827065eb7df4865/1200x630cq70/photo.jpg",
+          "price": 4000,
+          "stock": 12,
+          "qty": 1
+        }
+      ],
+      "id": 6
+    },
+    {
+      "idUser": 2,
+      "username": "penyok",
+      "time": "8/26/2022, 5:07:40 PM",
+      "products": [
+        {
+          "id": 6,
+          "name": "Risoles",
+          "image": "https://asset.kompas.com/crops/_B42nVw4QW_8mK2CIIfOrdUjA8I=/205x17:858x453/780x390/data/photo/2021/07/13/60ed5b53cf277.jpg",
+          "price": 4000,
+          "stock": 10,
+          "qty": 4
+        }
+      ],
+      "id": 7
+    },
+    {
+      "idUser": 3,
+      "username": "mukidi",
+      "time": "8/26/2022, 7:09:54 PM",
+      "products": [
+        {
+          "id": 3,
+          "name": "Pastel",
+          "image": "https://cdn-2.tstatic.net/kaltim/foto/bank/images/resep-pastel-ayam.jpg",
+          "price": 4000,
+          "stock": 10,
+          "qty": 3
+        }
+      ],
+      "id": 8
+    }
+  ]
+}

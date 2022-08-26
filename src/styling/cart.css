@@ -1,0 +1,24 @@
+.pageCont {
+    background: url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+    padding: 12vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.table {
+    text-align: center;
+    vertical-align:middle ;
+}
+.image {
+    height: 10vh;
+    width: 10vh;
+    object-fit: cover;
+    object-position: center;
+}
+.captImg {
+    font-size: 3vh;
+    font-weight: 600;
+    color: orange;
+    text-align: center;
+}
