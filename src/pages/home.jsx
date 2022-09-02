@@ -89,7 +89,7 @@ class HomePage extends React.Component {
                         })}
                     </Carousel>
                     <div style={styles.sectProducts}>
-                        <h1 style={styles.sectProductsTitle}>Produk Kami</h1>
+                        <h1 id='produk' style={styles.sectProductsTitle}>Produk Kami</h1>
                         <div style={styles.contProducts}>
                             {this.showProducts()}
                         </div>

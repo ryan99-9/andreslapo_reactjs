@@ -23,8 +23,8 @@ class NavigationBar extends React.Component {
                 <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav className="me-auto">
                         <Nav.Link style={styles.navLink} as={Link} to='/' >Home</Nav.Link>
-                        <Nav.Link style={styles.navLink} href="#link">Product</Nav.Link>
-                        <Nav.Link style={styles.navLink} href="#link">Contact Us</Nav.Link>
+                        <Nav.Link style={styles.navLink} href='/#footer'>Product</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#footer">Contact Us</Nav.Link>
                     </Nav>
                     {this.props.role === 'user' ?
                         <Button style={{ marginRight: '10px' }} variant="outline-warning" as={Link} to="/cart" >

@@ -3,7 +3,7 @@ import React from 'react'
 class Footer extends React.Component {
     render() {
         return (
-            <div style={styles.cont}>
+            <div id='footer' style={styles.cont}>
                 <div>
                     <i className="fa-brands fa-square-whatsapp fa-2xl"></i> <nsbp/>
                     0812-3456-78910
