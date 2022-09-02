@@ -15,19 +15,19 @@ import { logout } from '../redux/actions'
 class NavigationBar extends React.Component {
     render() {
         return (
-            <Navbar fixed='top' className='px-5' style={styles.navbar} expand="lg">
+            <Navbar variant='dark' fixed='top' className='px-5' style={styles.navbar} expand="lg">
                 <Navbar.Brand href="#home">
                     <Image style={styles.image} src={LOGO} />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav className="me-auto">
                         <Nav.Link style={styles.navLink} as={Link} to='/' >Home</Nav.Link>
                         <Nav.Link style={styles.navLink} href="#link">Product</Nav.Link>
                         <Nav.Link style={styles.navLink} href="#link">Contact Us</Nav.Link>
                     </Nav>
                     {this.props.role === 'user' ?
-                        <Button variant="outline-warning" as={Link} to="/cart" >
+                        <Button style={{ marginRight: '10px' }} variant="outline-warning" as={Link} to="/cart" >
                             <i className="fa-solid fa-cart-shopping"></i>
                             <Badge pill bg="warning" text="dark">
                                 {this.props.cart.length}
@@ -36,7 +36,7 @@ class NavigationBar extends React.Component {
                         :
                         null
                     }
-                    <Dropdown style={{ marginLeft: '10px' }}>
+                    <Dropdown >
                         <Dropdown.Toggle variant="warning" id="dropdown-basic">
                             {this.props.username ? this.props.username : "Username"}
                         </Dropdown.Toggle>

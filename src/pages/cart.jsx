@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import NavigationBar from '../component/navigationBar'
+import Footer from '../component/footer'
 import {
     Table,
     Image,
@@ -15,6 +16,7 @@ import {
 } from 'react-bootstrap'
 import { delCart, saveCart, checkout } from '../redux/actions'
 
+
 class CartPage extends React.Component {
     constructor(props) {
         super(props)
@@ -24,10 +26,10 @@ class CartPage extends React.Component {
             askPass: false,
             visibility: false,
             errPass: false,
-            checkoutSucces: false
+            checkoutSucces: false,
         }
     }
-
+    
     showTableHead = () => {
         return (
             <thead>
@@ -43,7 +45,6 @@ class CartPage extends React.Component {
             </thead>
         )
     }
-
     showTableBody = () => {
         return (
             <tbody>
@@ -173,7 +174,7 @@ class CartPage extends React.Component {
             <div>
                 <NavigationBar />
                 <div className='pageCont'>
-                    <Table className='table' bordered hover variant='dark' striped>
+                    <Table responsive='sm' className='table' bordered hover variant='dark' striped>
                         {this.showTableHead()}
                         {this.showTableBody()}
                     </Table>
@@ -227,6 +228,7 @@ class CartPage extends React.Component {
                         </Modal.Footer>
                     </Modal>
                 </div>
+                <Footer />
             </div>
         )
     }

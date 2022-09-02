@@ -8,6 +8,7 @@ import {
     Table,
     Image
 } from 'react-bootstrap'
+import Footer from "../component/footer";
 
 const url = 'https://jajan-database.herokuapp.com'
 
@@ -40,9 +41,9 @@ class HistoryAdminPage extends React.Component {
                         {this.state.history.reverse().map((item, index) => {
                             return (
                                 <Accordion.Item key={index} eventKey={index}>
-                                    <Accordion.Header><strong>User:</strong> {item.username}, <strong>Tanggal:</strong> {item.time}</Accordion.Header>
+                                    <Accordion.Header><strong>{item.username}</strong> - {item.time}</Accordion.Header>
                                     <Accordion.Body>
-                                        <Table striped bordered hover variant="dark">
+                                        <Table responsive='sm' striped bordered hover variant="dark">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -75,8 +76,8 @@ class HistoryAdminPage extends React.Component {
                             )
                         })}
                     </Accordion>
-
                 </div>
+                <Footer />
             </div>
         )
     }

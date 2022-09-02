@@ -75,8 +75,8 @@ class RegisPage extends React.Component {
         return (
             <div style={styles.cont}>
                 <div style={styles.contForm}>
-                    <h2 style={{ color: 'orange' }}>Looking for Tasty Pastry?</h2>
-                    <h3 style={{ color: 'orange' }} className='mb-4'>Register Now!!!</h3>
+                    <h2 style={{ color: 'orange' }}>Ingin Jajanan yang Mantap?</h2>
+                    <h3 style={{ color: 'orange' }} className='mb-4'>Register Sekarang!!!</h3>
                     <Form.Label style={styles.fontColor}>Username</Form.Label>
                     <InputGroup>
                         <InputGroup.Text id="basic-addon1">
@@ -85,7 +85,7 @@ class RegisPage extends React.Component {
                         <Form.Control
                             onChange={(e) => this.userValid(e)}
                             ref='username'
-                            placeholder="Input Your Username" />
+                            placeholder="Masukkan Username Anda" />
                     </InputGroup>
                     <Form.Text className="text-danger">
                         {this.state.usernameErr ? 'Minimal 6 karakter berupa huruf/angka (bukan simbol)' : ''}
@@ -99,7 +99,7 @@ class RegisPage extends React.Component {
                         <Form.Control
                             ref='email'
                             onChange={(e) => this.emailValid(e)}
-                            placeholder="Input Your E-mail" />
+                            placeholder="Masukkan E-mail Anda" />
                     </InputGroup>
                     <Form.Text className="text-danger">
                         {this.state.emailErr ? 'Email tidak valid' : ''}
@@ -114,7 +114,7 @@ class RegisPage extends React.Component {
                             ref='password'
                             onChange={(e) => this.passValid(e)}
                             type={visibility ? 'text' : 'password'}
-                            placeholder="Input Your Password" />
+                            placeholder="Masukkan Password Anda" />
                     </InputGroup>
                     <Form.Text className="text-danger">
                         {this.state.passErr ? 'Minimal 6 karakter terdiri dari huruf, angka, dan simbol' : ''}
@@ -128,7 +128,7 @@ class RegisPage extends React.Component {
                         <Form.Control
                             ref='confPassword'
                             type={visibility2 ? 'text' : 'password'}
-                            placeholder="Confirm Your Password" />
+                            placeholder="Konfirmasi Password Anda" />
                     </InputGroup>
                     <div style={styles.contButton}>
                         <Button onClick={this.onRegister} variant="warning">
@@ -136,8 +136,8 @@ class RegisPage extends React.Component {
                             Register
                         </Button>
                     </div>
-                    <p style={styles.parRegislink}>Already have an account? <Link style={styles.regisLink} to='/login'>Login</Link></p>
-                    <p style={styles.parRegislink}>Go to <Link style={styles.regisLink} to='/'>Home</Link></p>
+                    <p style={styles.parRegislink}>Sudah punya akun? <Link style={styles.regisLink} to='/login'>Login</Link></p>
+                    <p style={styles.parRegislink}>Kembali ke <Link style={styles.regisLink} to='/'>Home</Link></p>
                 </div>
                 <Modal show={this.state.registerErr[0]}>
                     <Modal.Header>
@@ -170,15 +170,16 @@ const styles = {
     cont: {
         background: "url(https://images.unsplash.com/photo-1608582037152-adefa9decb70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80) center",
         backgroundSize: 'cover',
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         justifyContent: 'right'
     },
     contForm: {
-        width: '50vw',
-        marginTop: '10px',
+        width: '100vh',
+        marginTop: 'auto',
         marginRight: '10px',
-        marginBottom: '10px',
+        marginLeft: '10px',
+        marginBottom: 'auto',
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         padding: '5%',
         paddingTop: '15px',
