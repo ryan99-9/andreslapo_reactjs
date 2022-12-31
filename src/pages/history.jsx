@@ -9,8 +9,15 @@ import {
     Image
 } from 'react-bootstrap'
 import Footer from '../component/footer'
+import Swal from 'sweetalert2'
 
-const url = 'https://jajan-database.herokuapp.com'
+// const url = 'https://jajan-database.herokuapp.com'
+// const url = 'http://localhost:2000'
+// const url = 'https://lizard-tux.cyclic.app'
+const url = 'https://andres-lapo.onrender.com'
+
+
+
 
 class HistoryPage extends React.Component {
     constructor(props) {

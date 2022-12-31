@@ -1,6 +1,10 @@
 import Axios from 'axios'
 
-const url = 'https://jajan-database.herokuapp.com'
+// const url = 'https://jajan-database.herokuapp.com'
+// const url = 'http://localhost:2000'
+// const url = 'https://lizard-tux.cyclic.app'
+const url = 'https://andres-lapo.onrender.com'
+
 
 export const login = (username, password) => {
     return (dispatch) => {
@@ -66,13 +70,13 @@ export const register = (username, email, data) => {
                     })
                 }
                 //cek kesamaan email di database
-                Axios.get(`${url}/users?email=${email}`)
-                    .then(res => {
-                        if (res.data.length !== 0) {
-                            return dispatch({
-                                type: 'USERNAME_EMAIL_EXIST'
-                            })
-                        }
+                // Axios.get(`${url}/users?email=${email}`)
+                //     .then(res => {
+                //         if (res.data.length !== 0) {
+                //             return dispatch({
+                //                 type: 'USERNAME_EMAIL_EXIST'
+                //             })
+                //         }
                         //post data user baru
                         Axios.post(`${url}/users`, data)
                             .then(res => {
@@ -80,7 +84,7 @@ export const register = (username, email, data) => {
                                     type: 'SUCCESS_REGISTER'
                                 })
                             })
-                    })
+                    // })
             })
     }
 }

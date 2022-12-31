@@ -11,13 +11,14 @@ import { LOGO } from '../assets'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../redux/actions'
+import Swal from 'sweetalert2'
 
 class NavigationBar extends React.Component {
     render() {
         return (
             <Navbar variant='dark' fixed='top' className='px-5' style={styles.navbar} expand="lg">
                 <Navbar.Brand href="#home">
-                    <Image style={styles.image} src={LOGO} />
+                    {/* <Image style={styles.image} src={LOGO} /> */}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav" >
@@ -38,19 +39,23 @@ class NavigationBar extends React.Component {
                     }
                     <Dropdown >
                         <Dropdown.Toggle variant="warning" id="dropdown-basic">
-                            {this.props.username ? this.props.username : "Username"}
+                            {this.props.username ? `Meja Nomer ${this.props.username}`  : "Welcome Bestie"}
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            {this.props.username ?
+                            {this.props.role === 'admin' ?
                                 <>
-                                    <Dropdown.Item as={Link} to={this.props.role === 'admin' ? '/historyadmin' : '/history'}>History</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to='/historyadmin'>History</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to='/register' >Register Meja Baru</Dropdown.Item>
                                     <Dropdown.Item onClick={this.props.logout}>Logout</Dropdown.Item>
+                                    
                                 </>
                                 :
                                 <>
-                                    <Dropdown.Item as={Link} to='/login' >Login</Dropdown.Item>
-                                    <Dropdown.Item as={Link} to='/register'>Register</Dropdown.Item>
+                                    {/* <Dropdown.Item as={Link} to='/history'>History</Dropdown.Item> */}
+                                    <Dropdown.Item as={Link} to={this.props.role === 'user' ? '/' : '/login' }>{this.props.role === 'user' ? 'Home' : 'Login' }</Dropdown.Item>
+                                    <Dropdown.Item onClick={this.props.logout}>Logout</Dropdown.Item>
+                                    
                                 </>
                             }
                         </Dropdown.Menu>

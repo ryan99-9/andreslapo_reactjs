@@ -35,7 +35,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         case 'USERNAME_EMAIL_EXIST':
             return {
                 ...state,
-                errorRegister: [true, 'Username atau Email telah digunakan']
+                errorRegister: [true, 'Nomer Meja sudah Terdaftar']
             }
         case 'RESET_REG_ERR':
             return {

@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styling/cart.css'
+import Swal from 'sweetalert2'
 
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -144,7 +145,20 @@ class CartPage extends React.Component {
     }
 
     onCheckOut = () => {
-        this.setState({ askPass: true })
+        
+        //siapkan data yg mau di push ke history
+        let dataHistory = {
+            idUser: this.props.id,
+            username: this.props.username,
+            time: new Date().toLocaleString(),
+            products: this.props.cart
+        }
+        this.setState({askPass: false, errPass: false, checkoutSucces: true})
+
+        this.props.checkout(this.props.id, dataHistory)
+        // Swal.fire('silahkan menunggu pesanan anda')
+        Swal.fire('silahkan menunggu pesanan anda')
+
     }
 
     onOKPass = () => {
@@ -179,54 +193,8 @@ class CartPage extends React.Component {
                         {this.showTableBody()}
                     </Table>
                     <Button onClick={this.onCheckOut} variant={this.props.cart.length === 0 ? 'danger' : 'success'} size='lg' disabled={this.props.cart.length === 0 ? true : false}><strong>{this.props.cart.length === 0 ? 'Keranjang Anda masih kosong' : 'Beli Sekarang'}</strong></Button>
-                    <Button as={Link} to='/history' className='mt-3' variant='warning' size='lg'><strong>History</strong></Button>
-                    <Modal
-                        show={this.state.askPass}
-                        aria-labelledby="contained-modal-title-vcenter"
-                        centered
-                        onHide={() => this.setState({ askPass: false, errPass: false })}
-                    >
-                        <Modal.Header closeButton>
-                            <Modal.Title style={{color: `${errPass ? 'red' : ''}`}} id="contained-modal-title-vcenter">
-                                {errPass ? 'Password Salah, Silahkan coba kembali !' : 'Silahkan Masukkan Password Anda'}
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <InputGroup style={{border: `${errPass ? 'red solid' : ''}`}} className="mb-3">
-                                <InputGroup.Text id="basic-addon1" onClick={() => this.setState({ visibility: !visibility })}>
-                                    {visibility ? <i className="fa-solid fa-eye"></i> : <i className="fa-solid fa-eye-slash"></i>}
-                                </InputGroup.Text>
-                                <Form.Control
-                                    ref='passwordUser'
-                                    type={visibility ? 'text' : 'password'}
-                                    placeholder="Masukkan Password Anda" />
-                                <Button onClick={this.onOKPass} variant="success" id="button-addon2">
-                                    OK
-                                </Button>
-                            </InputGroup>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant='danger' onClick={() => this.setState({ askPass: false, errPass: false })}>Batal</Button>
-                        </Modal.Footer>
-                    </Modal>
-                    <Modal
-                        show={checkoutSucces}
-                        aria-labelledby="contained-modal-title-vcenter"
-                        centered
-                        onHide={() => this.setState({ checkoutSucces: false })}
-                    >
-                        <Modal.Header closeButton>
-                            <Modal.Title id="contained-modal-title-vcenter">
-                                Transaksi Berhasil
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <p>Silahkan klik HISTORY untuk melihat riwayat transaksi Anda</p>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant='warning' onClick={() => this.setState({ checkoutSucces: false })}>OK</Button>
-                        </Modal.Footer>
-                    </Modal>
+                    {/* <Button as={Link} to='/history' className='mt-3' variant='warning' size='lg'><strong>History</strong></Button> */}
+                    
                 </div>
                 <Footer />
             </div>

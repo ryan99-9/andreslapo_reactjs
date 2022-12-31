@@ -4,7 +4,7 @@ class Footer extends React.Component {
     render() {
         return (
             <div id='footer' style={styles.cont}>
-                <div>
+                {/* <div>
                     <i className="fa-brands fa-square-whatsapp fa-2xl"></i> <nsbp/>
                     0812-3456-78910
                 </div>
@@ -15,7 +15,7 @@ class Footer extends React.Component {
                 <div>
                     <i className="fa-brands fa-square-facebook fa-2xl"></i> <nsbp/>
                     JajankuOfficial
-                </div>
+                </div> */}
             </div>
         )
     }

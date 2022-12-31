@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 import { login, errLoginFalse } from '../redux/actions'
 import NavigationBar from '../component/navigationBar';
 import Footer from '../component/footer'
+import Swal from 'sweetalert2'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -23,10 +24,10 @@ class LoginPage extends React.Component {
     onLogin = () => {
         //ambil data dari input username & password
         let username = this.refs.username.value
-        let password = this.refs.password.value
+        let password = username
         // console.log(username, password)
 
-        // kalau ada input yg masih kosong maka muncul alert data tidak boleh kosong
+        // kalau ada input yg masih kosong maka muncul Swal.fire data tidak boleh kosong
         if (!username || !password) {
             return this.setState({ error: true })
         }
@@ -50,14 +51,14 @@ class LoginPage extends React.Component {
                     <div style={styles.contForm}>
                         <h1 style={{ color: 'orange' }}>Halo,</h1>
                         <h3 style={{ color: 'orange' }} className='mb-4'>Selamat Datang !</h3>
-                        <Form.Label style={styles.fontColor}>Username</Form.Label>
+                        <Form.Label style={styles.fontColor}>Masukan Nomer Meja Anda</Form.Label>
                         <InputGroup className='mb-3'>
                             <InputGroup.Text id="basic-addon1">
                                 <i className='fa-solid fa-user'></i>
                             </InputGroup.Text>
-                            <Form.Control ref="username" placeholder="Masukkan Username Anda" />
+                            <Form.Control ref="username" placeholder="Nomer Meja" />
                         </InputGroup>
-                        <Form.Label style={styles.fontColor}>Password</Form.Label>
+                        {/* <Form.Label style={styles.fontColor}>Password</Form.Label>
                         <InputGroup className="mb-3">
                             <InputGroup.Text id="basic-addon1" onClick={() => this.setState({ visibility: !visibility })}>
                                 {visibility ? <i className="fa-solid fa-eye"></i> : <i className="fa-solid fa-eye-slash"></i>}
@@ -66,14 +67,14 @@ class LoginPage extends React.Component {
                                 ref='password'
                                 type={visibility ? 'text' : 'password'}
                                 placeholder="Masukkan Password Anda" />
-                        </InputGroup>
+                        </InputGroup> */}
                         <div style={styles.contButton}>
                             <Button variant="warning" onClick={this.onLogin}>
                                 <i style={{ marginRight: '10px' }} className="fa-solid fa-door-open"></i>
                                 Login
                             </Button>
                         </div>
-                        <p style={styles.parRegislink}>Belum punya akun? <Link style={styles.regisLink} to='/register'>Register</Link></p>
+                        {/* <p style={styles.parRegislink}>Belum punya akun? <Link style={styles.regisLink} to='/register'>Register</Link></p> */}
                     </div>
                     <Modal show={this.state.error}>
                         <Modal.Header closeButton>
@@ -112,7 +113,7 @@ class LoginPage extends React.Component {
 
 const styles = {
     cont: {
-        background: "url(https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80) center",
+        background: "url(https://i.pinimg.com/564x/4d/1a/a3/4d1aa3fc54edbaae1e425f3ef4ab2235.jpg) center",
         backgroundSize: 'cover',
         minHeight: '100vh',
         display: 'flex',

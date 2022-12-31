@@ -14,6 +14,8 @@ import NotFoundPage from './pages/notFound';
 
 //import actions
 import { keepLogin } from './redux/actions'
+import AddProductPage from './pages/addproducts';
+import EditProduk from './pages/editproduk';
 
 class App extends React.Component {
   componentDidMount() {
@@ -29,7 +31,9 @@ class App extends React.Component {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisPage />} />
             <Route path='/detail' element={<DetailPage />} />
+            <Route path='/addproduct' element={<AddProductPage />} />
             <Route path='/historyadmin' element={<HistoryAdminPage />} />
+            <Route path='/editproduk' element={<EditProduk />} />
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
         </div>

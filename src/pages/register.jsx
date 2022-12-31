@@ -3,11 +3,14 @@ import {
     InputGroup,
     Form,
     Button,
-    Modal
+    Modal,
+    
+
 } from 'react-bootstrap'
 import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { register, resetRegErr } from '../redux/actions'
+import Swal from 'sweetalert2'
 
 class RegisPage extends React.Component {
     constructor(props) {
@@ -23,8 +26,8 @@ class RegisPage extends React.Component {
     }
 
     userValid = (e) => {
-        let symb = /[!@#$%^&*]/
-        if (symb.test(e.target.value) || e.target.value.length < 6) return this.setState({ usernameErr: true })
+        // let symb = /[!@#$%^&*]/
+        // if (symb.test(e.target.value) || e.target.value.length < 6) return this.setState({ usernameErr: true })
         this.setState({ usernameErr: false })
     }
 
@@ -42,16 +45,19 @@ class RegisPage extends React.Component {
     }
 
     onRegister = () => {
+        // let username = this.refs.username.value
+        // let email = this.refs.email.value
+        // let password = this.refs.password.value
         let username = this.refs.username.value
-        let email = this.refs.email.value
-        let password = this.refs.password.value
+        let email = 'emailgenerate@gmail.com'
+        let password = username
 
         // cek apakah semua input sudah terisi & valid
-        if (!username || !password || !email || this.state.usernameErr || this.state.emailErr || this.state.passErr) return this.setState({ registerErr: [true, 'Pastikan semua data sudah terisi & valid'] })
+        // if (!username || !password || !email || this.state.usernameErr || this.state.emailErr || this.state.passErr) return this.setState({ registerErr: [true, 'Pastikan semua data sudah terisi & valid'] })
 
         // cek apakah confrim password = password
-        if (this.refs.confPassword.value !== password) return this.setState({ registerErr: [true, 'Pastikan Confirm Password sama dengan Password yang Anda masukkan'] })
-        
+        // if (this.refs.confPassword.value !== password) return this.setState({ registerErr: [true, 'Pastikan Confirm Password sama dengan Password yang Anda masukkan'] })
+
         //siapkan objek utk user baru
         let obj = {
             username,
@@ -67,9 +73,27 @@ class RegisPage extends React.Component {
 
     render() {
         if (this.props.successReg) {
-            return <Navigate to='/login'/>
+            return 
+                Swal.fire('Hello, Admin! Register Meja Baru Sukses.') 
+                
+            
+            // <div class="Swal.fire Swal.fire-success" role="Swal.fire">
+            //     A simple success Swal.fire—check it out!
+            // </div>
+            // <div class="toast" role="Swal.fire" aria-live="assertive" aria-atomic="true">
+            //     <div class="toast-header">
+            //         {/* <img src="..." class="rounded me-2" alt="..."> */}
+            //             <strong class="me-auto">Jajanku</strong>
+            //             <small>11 mins ago</small>
+            //             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            //     </div>
+            //     <div class="toast-body">
+            //         Hello, Admin! Register Meja Baru Sukses.
+            //     </div>
+            // </div>
+
         }
-        
+
         const { visibility, visibility2 } = this.state
 
         return (
@@ -77,7 +101,7 @@ class RegisPage extends React.Component {
                 <div style={styles.contForm}>
                     <h2 style={{ color: 'orange' }}>Ingin Jajanan yang Mantap?</h2>
                     <h3 style={{ color: 'orange' }} className='mb-4'>Register Sekarang!!!</h3>
-                    <Form.Label style={styles.fontColor}>Username</Form.Label>
+                    <Form.Label style={styles.fontColor}>Masukan Nomer Meja Baru</Form.Label>
                     <InputGroup>
                         <InputGroup.Text id="basic-addon1">
                             <i className="fa-solid fa-user"></i>
@@ -85,13 +109,13 @@ class RegisPage extends React.Component {
                         <Form.Control
                             onChange={(e) => this.userValid(e)}
                             ref='username'
-                            placeholder="Masukkan Username Anda" />
+                            placeholder="Nomer Meja" />
                     </InputGroup>
-                    <Form.Text className="text-danger">
+                    {/* <Form.Text className="text-danger">
                         {this.state.usernameErr ? 'Minimal 6 karakter berupa huruf/angka (bukan simbol)' : ''}
-                    </Form.Text>
+                    </Form.Text> */}
                     <br />
-                    <Form.Label className="mt-1" style={styles.fontColor}>E-mail</Form.Label>
+                    {/* <Form.Label className="mt-1" style={styles.fontColor}>E-mail</Form.Label>
                     <InputGroup>
                         <InputGroup.Text id="basic-addon1">
                             <i className="fa-solid fa-envelope"></i>
@@ -129,16 +153,17 @@ class RegisPage extends React.Component {
                             ref='confPassword'
                             type={visibility2 ? 'text' : 'password'}
                             placeholder="Konfirmasi Password Anda" />
-                    </InputGroup>
+                    </InputGroup> */}
                     <div style={styles.contButton}>
                         <Button onClick={this.onRegister} variant="warning">
                             <i style={{ marginRight: '10px' }} className="fa-solid fa-user-plus"></i>
                             Register
                         </Button>
                     </div>
-                    <p style={styles.parRegislink}>Sudah punya akun? <Link style={styles.regisLink} to='/login'>Login</Link></p>
+                    {/* <p style={styles.parRegislink}>Sudah punya akun? <Link style={styles.regisLink} to='/login'>Login</Link></p> */}
                     <p style={styles.parRegislink}>Kembali ke <Link style={styles.regisLink} to='/'>Home</Link></p>
                 </div>
+                {/* <Modal show={this.state.registerErr[0]}> */}
                 <Modal show={this.state.registerErr[0]}>
                     <Modal.Header>
                         <Modal.Title>ERROR</Modal.Title>
@@ -211,4 +236,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {register, resetRegErr}) (RegisPage)
+export default connect(mapStateToProps, { register, resetRegErr })(RegisPage)
