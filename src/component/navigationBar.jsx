@@ -18,7 +18,7 @@ class NavigationBar extends React.Component {
         return (
             <Navbar variant='dark' fixed='top' className='px-5' style={styles.navbar} expand="lg">
                 <Navbar.Brand href="#home">
-                    {/* <Image style={styles.image} src={LOGO} /> */}
+                    <Image style={styles.image} src={LOGO} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav" >
@@ -28,9 +28,9 @@ class NavigationBar extends React.Component {
                         <Nav.Link style={styles.navLink} href="#footer">Contact Us</Nav.Link>
                     </Nav>
                     {this.props.role === 'user' ?
-                        <Button style={{ marginRight: '10px' }} variant="outline-warning" as={Link} to="/cart" >
+                        <Button style={{ marginRight: '10px',marginBottom:'10px' }} variant="outline-warning" as={Link} to="/cart" >
                             <i className="fa-solid fa-cart-shopping"></i>
-                            <Badge pill bg="warning" text="dark">
+                            <Badge pill bg="warning" text="dark" >
                                 {this.props.cart.length}
                             </Badge>
                         </Button>
@@ -38,7 +38,7 @@ class NavigationBar extends React.Component {
                         null
                     }
                     <Dropdown >
-                        <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                        <Dropdown.Toggle variant="warning" id="dropdown-basic" style={{marginBottom:'10px'}}>
                             {this.props.username ? `Meja Nomer ${this.props.username}`  : "Welcome Bestie"}
                         </Dropdown.Toggle>
 

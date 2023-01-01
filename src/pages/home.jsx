@@ -33,20 +33,21 @@ class HomePage extends React.Component {
             // qty: 0,
             toLogin: false,
             indexEdit: null,
+            goods:''
         }
     }
 
     componentDidMount() {
         this.fecthData()
-
     }
     fecthData = () => {
         Axios.get(`${url}/products`)
             .then(res => {
-                this.setState({ products: res.data, maxPage: Math.ceil(res.data.length / this.state.prodPerPage) })
+                let data = res.data
+                this.setState({ products: data, maxPage: Math.ceil(res.data.length / this.state.prodPerPage) })
                 console.log(res.data)
                 // console.log(res.data[].qty)
-            }).catch(err=>console.log(err))
+            }).catch(err => console.log(err))
         Axios.get(`${url}/slider`)
             .then(res => {
                 this.setState({ carousel: res.data })
@@ -127,8 +128,6 @@ class HomePage extends React.Component {
         let fil = products.filter(filterOn)
         console.log(fil)
 
-
-
         this.props.addCart(this.props.id, fil[0], index)
         // this.fecthData()
         let temp = 0
@@ -142,13 +141,30 @@ class HomePage extends React.Component {
     }
 
     showProducts = () => {
-        const { product, qty, toLogin } = this.state
-        // let beginIndex = (this.state.page - 1) * this.state.prodPerPage
-        // let currentProd = this.state.products.slice(beginIndex, beginIndex + this.state.prodPerPage)
-        // console.log(currentProd)
+        const { product, qty, goods,products} = this.state
+        let show = ''
+        if(goods=='snack'){
+            function filterA(z) {
+                return z.description.toLowerCase() === "snack"
+            }
+            show = products.filter(filterA)
+        } else if (goods=='minuman'){
+            function filterB(z) {
+                return z.description.toLowerCase() === "minuman"
+            }
+            show = products.filter(filterB)
+        } else if (goods =='semua'){
+            show = products
+        }
+        else {
+            function filterOn(z) {
+                return z.description.toLowerCase() === "makanan"
+            }
+            show = products.filter(filterOn)
+        }
+        console.log(show)
         return (
-            // currentProd.map((item, index) => {
-            this.state.products.map((item, index) => {
+            show.map((item, index) => {
                 return (
                     <>
                         {this.props.role === 'user' ?
@@ -218,6 +234,7 @@ class HomePage extends React.Component {
         )
     }
 
+  
     onDelete = (index) => {
         // let idproduct = this.props.location.pathname.slice(13)
         console.log(index)
@@ -265,8 +282,7 @@ class HomePage extends React.Component {
             })
         )
     }
-
-
+ 
 
     render() {
 
@@ -287,6 +303,12 @@ class HomePage extends React.Component {
                         :
                         <div style={styles.sectProducts}>
                             <h1 id='produk' style={styles.sectProductsTitle}>Produk Kami</h1>
+                            <div style={{ display: 'flex',width:'50%',marginBottom:'5%' }}>
+                                <Button onClick={()=>this.setState({goods:'semua'})} variant='warning' style={{ margin: '5%' }}>All</Button>
+                                <Button onClick={()=>this.setState({goods:'makanan'})} variant='warning' style={{ margin: '5%' }}>Food</Button>
+                                <Button onClick={()=>this.setState({goods:'minuman'})} variant='warning' style={{ margin: '5%' }}>Beverage</Button>
+                                <Button onClick={()=>this.setState({goods:'snack'})} variant='warning' style={{ margin: '5%' }}>Snack</Button>
+                            </div>
                             <div style={styles.contProducts}>
                                 {this.showProducts()}
                             </div>

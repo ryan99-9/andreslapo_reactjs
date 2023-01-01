@@ -11,9 +11,7 @@ import {
     Table,
     Image,
     Button,
-    Form,
-    Modal,
-    InputGroup
+    Form
 } from 'react-bootstrap'
 import { delCart, saveCart, checkout } from '../redux/actions'
 
@@ -33,49 +31,49 @@ class CartPage extends React.Component {
     
     showTableHead = () => {
         return (
-            <thead>
+            <thead style={{width:'100%'}}>
                 <tr>
-                    <th>#</th>
-                    <th>Gambar</th>
-                    <th>Produk</th>
-                    <th>Harga</th>
-                    <th>Jumlah</th>
-                    <th>Total Harga</th>
-                    <th>Opsi</th>
+                    <th>No</th>
+                    {/* <th>Gambar</th> */}
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Act</th>
                 </tr>
             </thead>
         )
     }
     showTableBody = () => {
         return (
-            <tbody>
+            <tbody style={{width:'100%'}}>
                 {this.props.cart.map((item, index) => {
                     if (index === this.state.indexEdit) {
                         return (
                             <tr key={index}>
                                 <td>{index + 1}</td>
-                                <td>
+                                {/* <td>
                                     <Image rounded className='image' src={item.image} />
-                                </td>
+                                </td> */}
                                 <td>{item.name}</td>
-                                <td>Rp. {item.price.toLocaleString()}/ pcs</td>
-                                <td width='15%'>
-                                    <div style={{ display: 'flex', justifyContent: "space-around", width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
-                                        <Button onClick={this.onMinus} style={{ flexBasis: '20%' }} disabled={this.state.qty <= 1 ? true : false} variant='outline-danger'>-</Button>
+                                <td>{item.price.toLocaleString()}</td>
+                                <td>
+                                    <div style={{ display: 'flex', justifyContent: "center", width: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
+                                        <Button  onClick={this.onMinus} style={{ width: '40%' }} disabled={this.state.qty <= 1 ? true : false} variant='outline-danger'>-</Button>
                                         <Form.Control
-                                            style={{ marginRight: '10px', marginLeft: '10px', flexBasis: '30%' }}
+                                            style={{ marginRight: '3%', marginLeft: '3%', width: '50px',fontSize:'12px',justifyItems:'center',textAlign:'center' }}
                                             value={this.state.qty}
                                             onClick={this.onInputClick}
                                             onKeyDown={(e) => this.onBackspace(e)}
                                             onChange={(e) => this.onInput(e, item.stock)}
                                         />
-                                        <Button onClick={this.onPlus} variant='outline-success' disabled={this.state.qty >= item.stock ? true : false} style={{ flexBasis: '20%' }}  >+</Button>
+                                        <Button onClick={this.onPlus} style={{ width: '40%'}} variant='outline-success' disabled={this.state.qty >= item.stock ? true : false}>+</Button>
                                     </div>
                                 </td>
-                                <td>Rp. {(item.qty * item.price).toLocaleString()}</td>
+                                <td>{(item.qty * item.price).toLocaleString()}</td>
                                 <td width='15%'>
-                                    <Button variant='danger' className='me-3' onClick={() => this.setState({ indexEdit: null })}>Batal</Button>
-                                    <Button variant='success' disabled={this.state.qty === ''} onClick={() => this.onSave(index)}>Simpan</Button>
+                                    <Button variant='dark' style={{margin:'3%'}} onClick={() => this.setState({ indexEdit: null })}>Undo</Button>
+                                    <Button variant='light' style={{margin:'3%'}}  disabled={this.state.qty === ''} onClick={() => this.onSave(index)}>Save</Button>
                                 </td>
                             </tr>
                         )
@@ -83,16 +81,16 @@ class CartPage extends React.Component {
                     return (
                         <tr key={index}>
                             <td>{index + 1}</td>
-                            <td>
+                            {/* <td>
                                 <Image rounded className='image' src={item.image} />
-                            </td>
+                            </td> */}
                             <td>{item.name}</td>
-                            <td>Rp. {item.price.toLocaleString()}/ pcs</td>
+                            <td>{item.price.toLocaleString()}</td>
                             <td width='15%'>{item.qty}</td>
-                            <td>Rp. {(item.qty * item.price).toLocaleString()}</td>
+                            <td>{(item.qty * item.price).toLocaleString()}</td>
                             <td width='15%'>
-                                <Button variant='danger' className='me-3' onClick={() => this.onDelete(index)}>Hapus</Button>
-                                <Button variant='secondary' onClick={() => this.onEdit(index)}>Edit</Button>
+                                <Button variant='dark' style={{margin:'3%'}} onClick={() => this.onDelete(index)}>Delete</Button>
+                                <Button variant='light' style={{margin:'3%'}} onClick={() => this.onEdit(index)}>Change</Button>
                             </td>
                         </tr>
                     )
@@ -192,7 +190,7 @@ class CartPage extends React.Component {
                         {this.showTableHead()}
                         {this.showTableBody()}
                     </Table>
-                    <Button onClick={this.onCheckOut} variant={this.props.cart.length === 0 ? 'danger' : 'success'} size='lg' disabled={this.props.cart.length === 0 ? true : false}><strong>{this.props.cart.length === 0 ? 'Keranjang Anda masih kosong' : 'Beli Sekarang'}</strong></Button>
+                    <Button onClick={this.onCheckOut} variant={this.props.cart.length === 0 ? 'danger' : 'success'} size='lg' disabled={this.props.cart.length === 0 ? true : false}><strong>{this.props.cart.length === 0 ? 'There is no item in cart' : 'Order'}</strong></Button>
                     {/* <Button as={Link} to='/history' className='mt-3' variant='warning' size='lg'><strong>History</strong></Button> */}
                     
                 </div>
