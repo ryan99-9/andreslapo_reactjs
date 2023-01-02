@@ -3,13 +3,15 @@ import {
     InputGroup,
     Form,
     Button,
-    Modal
+    Modal,
+    Image
 } from 'react-bootstrap'
 import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { login, errLoginFalse } from '../redux/actions'
 import NavigationBar from '../component/navigationBar';
 import Footer from '../component/footer'
+import { LAPO } from '../assets'
 import Swal from 'sweetalert2'
 
 class LoginPage extends React.Component {
@@ -49,7 +51,10 @@ class LoginPage extends React.Component {
                 <div style={styles.cont}>
                     <NavigationBar />
                     <div style={styles.contForm}>
-                        <h1 style={{ color: 'orange' }}>Halo,</h1>
+                        <div style={{ display: 'flex', flexDirection: 'row',justifyContent:'space-between' }}>
+                            <h1 style={{ color: 'orange',marginTop:'25px' }}>Halo,</h1>
+                            <Image style={styles.lapo} src={LAPO} />
+                        </div>
                         <h3 style={{ color: 'orange' }} className='mb-4'>Selamat Datang !</h3>
                         <Form.Label style={styles.fontColor}>Masukan Nomer Meja Anda</Form.Label>
                         <InputGroup className='mb-3'>
@@ -119,6 +124,10 @@ const styles = {
         display: 'flex',
         // flexDirection:'column',
         justifyContent: 'center'
+    },
+    lapo: {
+        height: '70px',
+       borderRadius:'5px',
     },
     contForm: {
         width: '50vh',
